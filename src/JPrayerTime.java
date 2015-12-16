@@ -13,7 +13,7 @@ import java.net.URL;
 import java.net.URLEncoder;
 
 /**
- * JPrayerTime -- A command line utility to print prayer times based on location input.
+ * JPrayerTime: A command line utility to print prayer times based on location input.
  * 2015 Martyono Sembodo (martyono.sembodo@gmail.com)
  * Reference: Egyptian General Authority of Survey
  * Fajr twilight: -19.5 degree
