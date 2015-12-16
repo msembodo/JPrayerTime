@@ -29,66 +29,47 @@ public class JPrayerTime {
     public static void main(String[] args) throws IOException, JSONException {
         String location = args[0];
 
-        // Get latitude-longitude from location.
-        JSONObject loc = getLatLong(location);
-        double latitude = loc.getDouble("lat");
-        double longitude = loc.getDouble("lng");
+        try {
+            // Get latitude-longitude from location.
+            JSONObject loc = getLatLong(location);
 
-        System.out.println("Prayer Time for " + formattedAddress);
+            double latitude = loc.getDouble("lat");
+            double longitude = loc.getDouble("lng");
 
-        DateTime localDateTime = getLocalDateTime(latitude, longitude, new DateTime(DateTimeZone.UTC));
+            System.out.println("Prayer Time for " + formattedAddress);
 
-        // Extract localDateTime components for calcPrayerTimes input.
-        int localYear = localDateTime.getYear();
-        int localMonth = localDateTime.getMonthOfYear();
-        int localDay = localDateTime.getDayOfMonth();
+            DateTime localDateTime = getLocalDateTime(latitude, longitude, new DateTime(DateTimeZone.UTC));
 
-        /*
-        int localHour = localDateTime.getHourOfDay();
-        int localMinute = localDateTime.getMinuteOfHour();
-        double localTime = localHour + (localMinute / 60.0);
-        */
+            // Extract localDateTime components for calcPrayerTimes input.
+            int localYear = localDateTime.getYear();
+            int localMonth = localDateTime.getMonthOfYear();
+            int localDay = localDateTime.getDayOfMonth();
 
-        int localOffset = (int)(rawOffset / 3600);
+            int localOffset = (int) (rawOffset / 3600);
 
-        DateTimeFormatter dtf = DateTimeFormat.forPattern("dd-MM-yyyy HH:mm:ss");
+            DateTimeFormatter dtf = DateTimeFormat.forPattern("dd-MM-yyyy HH:mm:ss");
 
-        System.out.println("Standard time name: " + timeZoneName);
-        System.out.println("Local date & time: " + dtf.print(localDateTime));
+            System.out.println("Standard time name: " + timeZoneName);
+            System.out.println("Local date & time: " + dtf.print(localDateTime));
 
-        // Get prayer times based on given location & local time.
-        PrayerTimes pt = getPrayerTimes(localYear, localMonth, localDay, longitude, latitude, localOffset, -19.5, -17.5);
+            // Get prayer times based on given location & local time.
+            PrayerTimes pt = getPrayerTimes(localYear, localMonth, localDay, longitude, latitude, localOffset, -19.5, -17.5);
 
-        /*
-        // Check to see currentTime goes to which prayer time (for colored output).
-        boolean isFajr = false; boolean isZuhr = false; boolean isAsr = false;
-        boolean isMaghrib = false; boolean isIsha = false;
-
-        if (localTime < pt.fajr)
-            isIsha = true;
-        else if (localTime < pt.sunRise)
-            isFajr = true;
-        else if (localTime < pt.zuhr)
-            isZuhr = false;
-        else if (localTime < pt.asr)
-            isZuhr = true;
-        else if (localTime < pt.maghrib)
-            isAsr = true;
-        else if (localTime < pt.isha)
-            isMaghrib = true;
-        else if (localTime >= pt.isha)
-            isIsha = true;
-        */
-
-        // Print prayer times.
-        System.out.println();
-        System.out.printf("%10s%s%02d%s%02d\n", "Fajr", " - ", pt.fajrHrMin[0], ":", pt.fajrHrMin[1]);
-        System.out.printf("%10s%s%02d%s%02d\n", "Sunrise", " - ", pt.sunRiseHrMin[0], ":", pt.sunRiseHrMin[1]);
-        System.out.printf("%10s%s%02d%s%02d\n", "Zuhr", " - ", pt.zuhrHrMin[0], ":", pt.zuhrHrMin[1]);
-        System.out.printf("%10s%s%02d%s%02d\n", "Asr", " - ", pt.asrHrMin[0], ":", pt.asrHrMin[1]);
-        System.out.printf("%10s%s%02d%s%02d\n", "Maghrib", " - ", pt.maghribHrMin[0], ":", pt.maghribHrMin[1]);
-        System.out.printf("%10s%s%02d%s%02d\n", "Isha", " - ", pt.ishaHrMin[0], ":", pt.ishaHrMin[1]);
-        System.out.println();
+            // Print prayer times.
+            System.out.println();
+            System.out.printf("%10s%s%02d%s%02d\n", "Fajr", " - ", pt.fajrHrMin[0], ":", pt.fajrHrMin[1]);
+            System.out.printf("%10s%s%02d%s%02d\n", "Sunrise", " - ", pt.sunRiseHrMin[0], ":", pt.sunRiseHrMin[1]);
+            System.out.printf("%10s%s%02d%s%02d\n", "Zuhr", " - ", pt.zuhrHrMin[0], ":", pt.zuhrHrMin[1]);
+            System.out.printf("%10s%s%02d%s%02d\n", "Asr", " - ", pt.asrHrMin[0], ":", pt.asrHrMin[1]);
+            System.out.printf("%10s%s%02d%s%02d\n", "Maghrib", " - ", pt.maghribHrMin[0], ":", pt.maghribHrMin[1]);
+            System.out.printf("%10s%s%02d%s%02d\n", "Isha", " - ", pt.ishaHrMin[0], ":", pt.ishaHrMin[1]);
+            System.out.println();
+        }
+        catch (JSONException e){
+            System.out.println("JPrayerTime: location not found or unknown.");
+            System.out.println("USAGE  : JPrayerTime <location>");
+            System.out.println("EXAMPLE: JPrayerTime \"London, UK\"");
+        }
     }
 
     // Connect using REST with JSON output.
