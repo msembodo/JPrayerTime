@@ -53,7 +53,8 @@ public class JPrayerTime {
             System.out.println("Local date & time: " + dtf.print(localDateTime));
 
             // Get prayer times based on given location & local time.
-            PrayerTimes pt = getPrayerTimes(localYear, localMonth, localDay, longitude, latitude, localOffset, -19.5, -17.5);
+            PrayerTimes pt = getPrayerTimes(localYear, localMonth, localDay, longitude, latitude,
+                    localOffset, -19.5, -17.5);
 
             // Print prayer times.
             System.out.println();
@@ -65,7 +66,7 @@ public class JPrayerTime {
             System.out.printf("%10s%s%02d%s%02d\n", "Isha", " - ", pt.ishaHrMin[0], ":", pt.ishaHrMin[1]);
             System.out.println();
         }
-        catch (JSONException e){
+        catch (JSONException e) {
             System.out.println("JPrayerTime: location not found or unknown.");
             System.out.println("USAGE  : JPrayerTime <location>");
             System.out.println("EXAMPLE: JPrayerTime \"London, UK\"");
@@ -124,16 +125,17 @@ public class JPrayerTime {
         return utcDate.plusSeconds((int)rawOffset + (int)dstOffset);
     }
 
-    /*
-    Original algorithm is in C++ by Mahmoud Adly Ezzat.
-	http://3adly.blogspot.co.id/2010/07/prayer-times-calculations-pure-c-code.html
+    /**
+     * Original algorithm is in C++ by Mahmoud Adly Ezzat.
+	 * http://3adly.blogspot.co.id/2010/07/prayer-times-calculations-pure-c-code.html
      */
     public static PrayerTimes getPrayerTimes(int year, int month, int day,
                                        double longitude, double latitude, int timezone,
                                        double fajrTwilight, double ishaTwilight) {
         PrayerTimes prayerTimes = new PrayerTimes();
 
-        double D = (367 * year) - ((year + (int) ((month + 9) / 12)) * 7 / 4) + (((int)(275 * month / 9)) + day - 730531.5);
+        double D = (367 * year) - ((year + (int) ((month + 9) / 12)) * 7 / 4) +
+                (((int)(275 * month / 9)) + day - 730531.5);
 
         double L = 280.461 + 0.9856474 * D;
         L = moreLess360(L);
@@ -153,7 +155,9 @@ public class JPrayerTime {
 
         double ST = 100.46 + 0.985647352 * D;
         double dec = radToDeg(Math.asin(Math.sin(degToRad(obliquity)) * Math.sin(degToRad(lambda))));
-        double durinalArc = radToDeg(Math.acos((Math.sin(degToRad(-0.8333)) - Math.sin(degToRad(dec))*Math.sin(degToRad(latitude))) / (Math.cos(degToRad(dec)) * Math.cos(degToRad(latitude)))));
+        double durinalArc = radToDeg(Math.acos((Math.sin(degToRad(-0.8333)) -
+                Math.sin(degToRad(dec))*Math.sin(degToRad(latitude))) / (Math.cos(degToRad(dec)) *
+                Math.cos(degToRad(latitude)))));
 
         double noon = alpha - ST;
         noon = moreLess360(noon);
@@ -167,7 +171,8 @@ public class JPrayerTime {
 
         // Asr Shafii
         double asrAlt = radToDeg(Math.atan(1 + Math.tan(degToRad(latitude - dec))));
-        double asrArc = radToDeg(Math.acos((Math.sin(degToRad(90 - asrAlt)) - Math.sin(degToRad(dec)) * Math.sin(degToRad(latitude))) / (Math.cos(degToRad(dec)) * Math.cos(degToRad(latitude)))));
+        double asrArc = radToDeg(Math.acos((Math.sin(degToRad(90 - asrAlt)) - Math.sin(degToRad(dec)) *
+                Math.sin(degToRad(latitude))) / (Math.cos(degToRad(dec)) * Math.cos(degToRad(latitude)))));
         asrArc = asrArc / 15;
 
         // 3) Asr Time
@@ -179,34 +184,42 @@ public class JPrayerTime {
         // 4) Maghrib Time
         prayerTimes.maghrib = prayerTimes.zuhr + (durinalArc / 15);
 
-        double ishaArc = radToDeg(Math.acos((Math.sin(degToRad(ishaTwilight)) - Math.sin(degToRad(dec)) * Math.sin(degToRad(latitude))) / (Math.cos(degToRad(dec)) * Math.cos(degToRad(latitude)))));
+        double ishaArc = radToDeg(Math.acos((Math.sin(degToRad(ishaTwilight)) - Math.sin(degToRad(dec)) *
+                Math.sin(degToRad(latitude))) / (Math.cos(degToRad(dec)) * Math.cos(degToRad(latitude)))));
 
         // 5) Isha Time
         prayerTimes.isha = prayerTimes.zuhr + (ishaArc / 15);
 
-        double fajrArc = radToDeg(Math.acos((Math.sin(degToRad(fajrTwilight)) - Math.sin(degToRad(dec)) * Math.sin(degToRad(latitude))) / (Math.cos(degToRad(dec)) * Math.cos(degToRad(latitude)))));
+        double fajrArc = radToDeg(Math.acos((Math.sin(degToRad(fajrTwilight)) - Math.sin(degToRad(dec)) *
+                Math.sin(degToRad(latitude))) / (Math.cos(degToRad(dec)) * Math.cos(degToRad(latitude)))));
 
         // 6) Fajr Time
         prayerTimes.fajr = prayerTimes.zuhr - (fajrArc / 15);
 
         // Convert prayer times from double to hour-minute.
         prayerTimes.fajrHrMin[0] = (int)Math.floor(moreLess24(prayerTimes.fajr));
-        prayerTimes.fajrHrMin[1] = (int)Math.floor(moreLess24(prayerTimes.fajr - prayerTimes.fajrHrMin[0]) * 60);
+        prayerTimes.fajrHrMin[1] = (int)Math.floor(moreLess24(prayerTimes.fajr -
+                prayerTimes.fajrHrMin[0]) * 60);
 
         prayerTimes.sunRiseHrMin[0] = (int)Math.floor(moreLess24(prayerTimes.sunRise));
-        prayerTimes.sunRiseHrMin[1] = (int)Math.floor(moreLess24(prayerTimes.sunRise - prayerTimes.sunRiseHrMin[0]) * 60);
+        prayerTimes.sunRiseHrMin[1] = (int)Math.floor(moreLess24(prayerTimes.sunRise -
+                prayerTimes.sunRiseHrMin[0]) * 60);
 
         prayerTimes.zuhrHrMin[0] = (int)Math.floor(moreLess24(prayerTimes.zuhr));
-        prayerTimes.zuhrHrMin[1] = (int)Math.floor(moreLess24(prayerTimes.zuhr - prayerTimes.zuhrHrMin[0]) * 60);
+        prayerTimes.zuhrHrMin[1] = (int)Math.floor(moreLess24(prayerTimes.zuhr -
+                prayerTimes.zuhrHrMin[0]) * 60);
 
         prayerTimes.asrHrMin[0] = (int)Math.floor(moreLess24(prayerTimes.asr));
-        prayerTimes.asrHrMin[1] = (int)Math.floor(moreLess24(prayerTimes.asr - prayerTimes.asrHrMin[0]) * 60);
+        prayerTimes.asrHrMin[1] = (int)Math.floor(moreLess24(prayerTimes.asr -
+                prayerTimes.asrHrMin[0]) * 60);
 
         prayerTimes.maghribHrMin[0] = (int)Math.floor(moreLess24(prayerTimes.maghrib));
-        prayerTimes.maghribHrMin[1] = (int)Math.floor(moreLess24(prayerTimes.maghrib - prayerTimes.maghribHrMin[0]) * 60);
+        prayerTimes.maghribHrMin[1] = (int)Math.floor(moreLess24(prayerTimes.maghrib -
+                prayerTimes.maghribHrMin[0]) * 60);
 
         prayerTimes.ishaHrMin[0] = (int)Math.floor(moreLess24(prayerTimes.isha));
-        prayerTimes.ishaHrMin[1] = (int)Math.floor(moreLess24(prayerTimes.isha - prayerTimes.ishaHrMin[0]) * 60);
+        prayerTimes.ishaHrMin[1] = (int)Math.floor(moreLess24(prayerTimes.isha -
+                prayerTimes.ishaHrMin[0]) * 60);
 
         return prayerTimes;
     }
