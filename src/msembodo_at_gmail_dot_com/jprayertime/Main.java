@@ -27,7 +27,7 @@ public class Main {
             System.out.printf("%10s%s%02d%s%02d\n", "Isha", " - ", pt.ishaHrMin[0], ":", pt.ishaHrMin[1]);
             System.out.println();
         }
-        catch (JSONException e) {
+        catch (JSONException | IndexOutOfBoundsException e) {
             System.out.println("JPrayerTime: location not found or unknown.");
             System.out.println("USAGE  : JPrayerTime <location>");
             System.out.println("EXAMPLE: JPrayerTime \"London, UK\"");
