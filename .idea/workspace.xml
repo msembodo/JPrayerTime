@@ -9,8 +9,6 @@
     <list default="true" id="34e55b1a-91df-4fe9-96ee-bdb0992891a4" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/JPrayerTime_jar/JPrayerTime.jar" afterPath="$PROJECT_DIR$/out/artifacts/JPrayerTime_jar/JPrayerTime.jar" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/msembodo_at_gmail_dot_com/jprayertime/Main.java" afterPath="$PROJECT_DIR$/src/msembodo_at_gmail_dot_com/jprayertime/Main.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/msembodo_at_gmail_dot_com/jprayertime/PrayerTimes.java" afterPath="$PROJECT_DIR$/src/msembodo_at_gmail_dot_com/jprayertime/PrayerTimes.java" />
     </list>
     <ignored path="JPrayerTime.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -32,20 +30,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/msembodo_at_gmail_dot_com/jprayertime/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
+            <state vertical-scroll-proportion="0.56736034">
               <caret line="37" column="0" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PrayerTimes.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="PrayerTimes.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/msembodo_at_gmail_dot_com/jprayertime/PrayerTimes.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="2.177437">
+            <state vertical-scroll-proportion="0.0">
               <caret line="146" column="0" selection-start-line="146" selection-start-column="0" selection-end-line="146" selection-end-column="0" />
               <folding />
             </state>
@@ -578,7 +576,13 @@
       <option name="project" value="LOCAL" />
       <updated>1450845841178</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="handle exceptions">
+      <created>1450884775786</created>
+      <option name="number" value="00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1450884775786</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TodoView">
@@ -710,6 +714,14 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/msembodo_at_gmail_dot_com/jprayertime/HourMinute.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.13800657">
+          <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/msembodo_at_gmail_dot_com/jprayertime/location/LocalDateTime.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -720,26 +732,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/msembodo_at_gmail_dot_com/jprayertime/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="37" column="0" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/msembodo_at_gmail_dot_com/jprayertime/HourMinute.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.13800657">
-          <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/msembodo_at_gmail_dot_com/jprayertime/PrayerTimes.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="2.177437">
+        <state vertical-scroll-proportion="0.0">
           <caret line="146" column="0" selection-start-line="146" selection-start-column="0" selection-end-line="146" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/msembodo_at_gmail_dot_com/jprayertime/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.56736034">
+          <caret line="37" column="0" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
           <folding />
         </state>
       </provider>
