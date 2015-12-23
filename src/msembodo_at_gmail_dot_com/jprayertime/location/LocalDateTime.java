@@ -71,7 +71,8 @@ public class LocalDateTime {
             formattedDateTime = dtf.print(localDateTime);
         }
         catch (JSONException e) {
-            e.printStackTrace();
+            System.out.print("JPrayerTime: unknown timezone.");
+            System.exit(1);
         }
     }
 }

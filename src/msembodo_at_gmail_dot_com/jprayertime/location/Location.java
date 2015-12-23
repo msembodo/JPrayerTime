@@ -39,7 +39,11 @@ public class Location {
             latitude = latlong.getDouble("lat");
             longitude = latlong.getDouble("lng");
         }
-        catch (JSONException | UnsupportedEncodingException e) {
+        catch (JSONException e) {
+            System.out.println("JPrayerTime: unknown location.");
+            System.exit(1);
+        }
+        catch (UnsupportedEncodingException e) {
             e.printStackTrace();
         }
     }
