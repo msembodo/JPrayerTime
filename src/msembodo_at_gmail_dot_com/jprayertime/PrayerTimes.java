@@ -8,17 +8,17 @@ import msembodo_at_gmail_dot_com.jprayertime.location.LocalDateTime;
  *
  * @author Martyono Sembodo (martyono.sembodo@gmail.com)
  */
-public class PrayerTimes {
+public class PrayerTimes implements HourMinute {
     public String formattedAddress;
     public String formattedDateTime;
     public String timeZoneName;
 
-    public int[] fajrHrMin = new int[2];
-    public int[] sunriseHrMin = new int[2];
-    public int[] zuhrHrMin = new int[2];
-    public int[] asrHrMin = new int[2];
-    public int[] maghribHrMin = new int[2];
-    public int[] ishaHrMin = new int[2];
+    public int[] fajrTime = new int[2];
+    public int[] sunriseTime = new int[2];
+    public int[] zuhrTime = new int[2];
+    public int[] asrTime = new int[2];
+    public int[] maghribTime = new int[2];
+    public int[] ishaTime = new int[2];
 
     public PrayerTimes(String address) {
         double fajrTwilight = -19.5;
@@ -104,23 +104,23 @@ public class PrayerTimes {
         fajr = zuhr - (fajrArc / 15);
 
         // Convert prayer times from double to hour-minute.
-        fajrHrMin[0] = (int)Math.floor(moreLess24(fajr));
-        fajrHrMin[1] = (int)Math.floor(moreLess24(fajr - fajrHrMin[0]) * 60);
+        fajrTime[HOUR] = (int)Math.floor(moreLess24(fajr));
+        fajrTime[MINUTE] = (int)Math.floor(moreLess24(fajr - fajrTime[HOUR]) * 60);
 
-        sunriseHrMin[0] = (int)Math.floor(moreLess24(sunrise));
-        sunriseHrMin[1] = (int)Math.floor(moreLess24(sunrise - sunriseHrMin[0]) * 60);
+        sunriseTime[HOUR] = (int)Math.floor(moreLess24(sunrise));
+        sunriseTime[MINUTE] = (int)Math.floor(moreLess24(sunrise - sunriseTime[HOUR]) * 60);
 
-        zuhrHrMin[0] = (int)Math.floor(moreLess24(zuhr));
-        zuhrHrMin[1] = (int)Math.floor(moreLess24(zuhr - zuhrHrMin[0]) * 60);
+        zuhrTime[HOUR] = (int)Math.floor(moreLess24(zuhr));
+        zuhrTime[MINUTE] = (int)Math.floor(moreLess24(zuhr - zuhrTime[HOUR]) * 60);
 
-        asrHrMin[0] = (int)Math.floor(moreLess24(asr));
-        asrHrMin[1] = (int)Math.floor(moreLess24(asr - asrHrMin[0]) * 60);
+        asrTime[HOUR] = (int)Math.floor(moreLess24(asr));
+        asrTime[MINUTE] = (int)Math.floor(moreLess24(asr - asrTime[HOUR]) * 60);
 
-        maghribHrMin[0] = (int)Math.floor(moreLess24(maghrib));
-        maghribHrMin[1] = (int)Math.floor(moreLess24(maghrib - maghribHrMin[0]) * 60);
+        maghribTime[HOUR] = (int)Math.floor(moreLess24(maghrib));
+        maghribTime[MINUTE] = (int)Math.floor(moreLess24(maghrib - maghribTime[HOUR]) * 60);
 
-        ishaHrMin[0] = (int)Math.floor(moreLess24(isha));
-        ishaHrMin[1] = (int)Math.floor(moreLess24(isha - ishaHrMin[0]) * 60);
+        ishaTime[HOUR] = (int)Math.floor(moreLess24(isha));
+        ishaTime[MINUTE] = (int)Math.floor(moreLess24(isha - ishaTime[HOUR]) * 60);
     }
 
     // Convert degree to radian
