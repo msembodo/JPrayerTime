@@ -10,9 +10,13 @@ import java.io.IOException;
  */
 public class Main {
     public static void main(String[] args) throws IOException {
-        String location = args[0];
+        String location;
 
         try {
+            if (args.length != 1)
+                throw new ArrayIndexOutOfBoundsException();
+
+            location = args[0];
             PrayerTimes pt = new PrayerTimes(location);
 
             System.out.println("Prayer Time for " + pt.formattedAddress);
@@ -27,7 +31,7 @@ public class Main {
             System.out.printf("%10s%s%02d%s%02d\n", "Isha", " - ", pt.ishaHrMin[0], ":", pt.ishaHrMin[1]);
             System.out.println();
         }
-        catch (JSONException | IndexOutOfBoundsException e) {
+        catch (JSONException | IOException | ArrayIndexOutOfBoundsException e) {
             System.out.println("JPrayerTime: location not found or unknown.");
             System.out.println("USAGE  : JPrayerTime <location>");
             System.out.println("EXAMPLE: JPrayerTime \"London, UK\"");
