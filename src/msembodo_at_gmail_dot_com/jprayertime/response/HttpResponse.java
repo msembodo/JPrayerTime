@@ -13,27 +13,40 @@ import java.net.URL;
  * @author Martyono Sembodo (martyono.sembodo@gmail.com)
  */
 public class HttpResponse {
-    private final URL url;
+    public String response;
 
-    public HttpResponse(String urlStr) throws MalformedURLException {
-        url = new URL(urlStr);
+    public HttpResponse(String urlStr) {
+        try {
+            URL url = new URL(urlStr);
+            httpGet(url);
+        }
+        catch (MalformedURLException e) {
+            System.out.println("JPrayerTime: Malformed URL");
+        }
     }
 
-    public String httpGet() throws IOException {
-        HttpURLConnection conn = (HttpURLConnection) url.openConnection();
-
-        if (conn.getResponseCode() != 200)
-            throw new IOException(conn.getResponseMessage());
-
-        BufferedReader rd = new BufferedReader(new InputStreamReader(conn.getInputStream()));
+    private void httpGet(URL url) {
         StringBuilder sb = new StringBuilder();
-        String line;
-        while ((line = rd.readLine()) != null)
-            sb.append(line);
 
-        rd.close();
-        conn.disconnect();
+        try {
+            HttpURLConnection conn = (HttpURLConnection) url.openConnection();
 
-        return sb.toString();
+            if (conn.getResponseCode() != 200)
+                throw new IOException(conn.getResponseMessage());
+
+            BufferedReader rd = new BufferedReader(new InputStreamReader(conn.getInputStream()));
+
+            String line;
+            while ((line = rd.readLine()) != null)
+                sb.append(line);
+
+            rd.close();
+            conn.disconnect();
+        }
+        catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        response = sb.toString();
     }
 }

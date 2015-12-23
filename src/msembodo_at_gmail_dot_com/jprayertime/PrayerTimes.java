@@ -1,9 +1,6 @@
 package msembodo_at_gmail_dot_com.jprayertime;
 
 import msembodo_at_gmail_dot_com.jprayertime.location.LocalDateTime;
-import org.json.JSONException;
-
-import java.io.IOException;
 
 /**
  * Calculate prayer times based on location input and also provide location properties
@@ -23,7 +20,7 @@ public class PrayerTimes {
     public int[] maghribHrMin = new int[2];
     public int[] ishaHrMin = new int[2];
 
-    public PrayerTimes(String address) throws IOException, JSONException {
+    public PrayerTimes(String address) {
         double fajrTwilight = -19.5;
         double ishaTwilight = -17.5;
 

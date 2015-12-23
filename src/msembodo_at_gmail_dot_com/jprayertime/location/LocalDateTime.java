@@ -8,8 +8,6 @@ import org.joda.time.format.DateTimeFormatter;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.io.IOException;
-
 /**
  * Provide details of date & time based on location input.
  *
@@ -28,12 +26,12 @@ public class LocalDateTime {
     public int localOffset;
     public String formattedDateTime;
 
-    public LocalDateTime(String address) throws IOException, JSONException {
+    public LocalDateTime(String address) {
         this.location = address;
         this.getLocalDateTime();
     }
 
-    private void getLocalDateTime() throws IOException, JSONException {
+    private void getLocalDateTime() {
         DateTime localDateTime;
         double rawOffset;
         double dstOffset;
@@ -53,23 +51,27 @@ public class LocalDateTime {
 
         HttpResponse hr = new HttpResponse(urlTimeZone);
 
-        JSONObject tzResponse = new JSONObject(hr.httpGet());
+        try {
+            JSONObject tzResponse = new JSONObject(hr.response);
 
-        dstOffset = tzResponse.getDouble("dstOffset");
-        rawOffset = tzResponse.getDouble("rawOffset");
-        timeZoneName = tzResponse.getString("timeZoneName");
+            dstOffset = tzResponse.getDouble("dstOffset");
+            rawOffset = tzResponse.getDouble("rawOffset");
+            timeZoneName = tzResponse.getString("timeZoneName");
+            localDateTime = utcDate.plusSeconds((int) rawOffset + (int) dstOffset);
 
-        localDateTime = utcDate.plusSeconds((int) rawOffset + (int) dstOffset);
+            formattedAddress = loc.formattedAddress;
+            latitude = loc.latitude;
+            longitude = loc.longitude;
+            year = localDateTime.getYear();
+            month = localDateTime.getMonthOfYear();
+            day = localDateTime.getDayOfMonth();
+            localOffset = (int) rawOffset / 3600;
 
-        formattedAddress = loc.formattedAddress;
-        latitude = loc.latitude;
-        longitude = loc.longitude;
-        year = localDateTime.getYear();
-        month = localDateTime.getMonthOfYear();
-        day = localDateTime.getDayOfMonth();
-        localOffset = (int) rawOffset / 3600;
-
-        DateTimeFormatter dtf = DateTimeFormat.forPattern("dd-MM-yyyy HH:mm:ss");
-        formattedDateTime = dtf.print(localDateTime);
+            DateTimeFormatter dtf = DateTimeFormat.forPattern("dd-MM-yyyy HH:mm:ss");
+            formattedDateTime = dtf.print(localDateTime);
+        }
+        catch (JSONException e) {
+            e.printStackTrace();
+        }
     }
 }

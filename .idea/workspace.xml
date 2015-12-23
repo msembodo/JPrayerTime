@@ -7,9 +7,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="34e55b1a-91df-4fe9-96ee-bdb0992891a4" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/JPrayerTime/msembodo_at_gmail_dot_com/jprayertime/Main.class" afterPath="$PROJECT_DIR$/out/production/JPrayerTime/msembodo_at_gmail_dot_com/jprayertime/Main.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/JPrayerTime_jar/JPrayerTime.jar" afterPath="$PROJECT_DIR$/out/artifacts/JPrayerTime_jar/JPrayerTime.jar" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/msembodo_at_gmail_dot_com/jprayertime/Main.java" afterPath="$PROJECT_DIR$/src/msembodo_at_gmail_dot_com/jprayertime/Main.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/msembodo_at_gmail_dot_com/jprayertime/PrayerTimes.java" afterPath="$PROJECT_DIR$/src/msembodo_at_gmail_dot_com/jprayertime/PrayerTimes.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/msembodo_at_gmail_dot_com/jprayertime/location/LocalDateTime.java" afterPath="$PROJECT_DIR$/src/msembodo_at_gmail_dot_com/jprayertime/location/LocalDateTime.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/msembodo_at_gmail_dot_com/jprayertime/location/Location.java" afterPath="$PROJECT_DIR$/src/msembodo_at_gmail_dot_com/jprayertime/location/Location.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/msembodo_at_gmail_dot_com/jprayertime/response/HttpResponse.java" afterPath="$PROJECT_DIR$/src/msembodo_at_gmail_dot_com/jprayertime/response/HttpResponse.java" />
     </list>
     <ignored path="JPrayerTime.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -31,14 +35,12 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/msembodo_at_gmail_dot_com/jprayertime/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.61336255">
-              <caret line="40" column="0" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state vertical-scroll-proportion="0.0">
+              <caret line="36" column="0" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -47,14 +49,8 @@
         <entry file="file://$PROJECT_DIR$/src/msembodo_at_gmail_dot_com/jprayertime/PrayerTimes.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="14" column="35" selection-start-line="14" selection-start-column="35" selection-end-line="14" selection-end-column="35" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#5252#5253#0" expanded="true" />
-                <element signature="e#5299#5300#0" expanded="true" />
-                <element signature="e#5377#5378#0" expanded="true" />
-                <element signature="e#5424#5425#0" expanded="true" />
-              </folding>
+              <caret line="15" column="40" selection-start-line="15" selection-start-column="40" selection-end-line="15" selection-end-column="40" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -63,7 +59,7 @@
         <entry file="file://$PROJECT_DIR$/src/msembodo_at_gmail_dot_com/jprayertime/location/LocalDateTime.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="12" column="3" selection-start-line="12" selection-start-column="3" selection-end-line="12" selection-end-column="3" />
+              <caret line="77" column="0" selection-start-line="77" selection-start-column="0" selection-end-line="77" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -75,7 +71,7 @@
         <entry file="file://$PROJECT_DIR$/src/msembodo_at_gmail_dot_com/jprayertime/location/Location.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="41" column="0" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
+              <caret line="46" column="0" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -83,11 +79,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="HttpResponse.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="HttpResponse.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/msembodo_at_gmail_dot_com/jprayertime/response/HttpResponse.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="39" column="0" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.7973713">
+              <caret line="52" column="0" selection-start-line="52" selection-start-column="0" selection-end-line="52" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -117,11 +113,11 @@
       <list>
         <option value="$PROJECT_DIR$/src/PrayerTimes.java" />
         <option value="$PROJECT_DIR$/src/JPrayerTime.java" />
-        <option value="$PROJECT_DIR$/src/msembodo_at_gmail_dot_com/jprayertime/PrayerTimes.java" />
         <option value="$PROJECT_DIR$/src/msembodo_at_gmail_dot_com/jprayertime/response/HttpResponse.java" />
         <option value="$PROJECT_DIR$/src/msembodo_at_gmail_dot_com/jprayertime/location/Location.java" />
-        <option value="$PROJECT_DIR$/src/msembodo_at_gmail_dot_com/jprayertime/location/LocalDateTime.java" />
+        <option value="$PROJECT_DIR$/src/msembodo_at_gmail_dot_com/jprayertime/PrayerTimes.java" />
         <option value="$PROJECT_DIR$/src/msembodo_at_gmail_dot_com/jprayertime/Main.java" />
+        <option value="$PROJECT_DIR$/src/msembodo_at_gmail_dot_com/jprayertime/location/LocalDateTime.java" />
       </list>
     </option>
   </component>
@@ -566,7 +562,13 @@
       <option name="project" value="LOCAL" />
       <updated>1450809267116</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="handle exceptions">
+      <created>1450833269592</created>
+      <option name="number" value="00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1450833269592</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TodoView">
@@ -632,34 +634,26 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/msembodo_at_gmail_dot_com/jprayertime/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.61336255">
-          <caret line="40" column="0" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/msembodo_at_gmail_dot_com/jprayertime/PrayerTimes.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="14" column="35" selection-start-line="14" selection-start-column="35" selection-end-line="14" selection-end-column="35" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#5252#5253#0" expanded="true" />
-            <element signature="e#5299#5300#0" expanded="true" />
-            <element signature="e#5377#5378#0" expanded="true" />
-            <element signature="e#5424#5425#0" expanded="true" />
-          </folding>
+          <caret line="15" column="40" selection-start-line="15" selection-start-column="40" selection-end-line="15" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/msembodo_at_gmail_dot_com/jprayertime/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="36" column="0" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/msembodo_at_gmail_dot_com/jprayertime/location/LocalDateTime.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="12" column="3" selection-start-line="12" selection-start-column="3" selection-end-line="12" selection-end-column="3" />
+          <caret line="77" column="0" selection-start-line="77" selection-start-column="0" selection-end-line="77" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -669,7 +663,7 @@
     <entry file="file://$PROJECT_DIR$/src/msembodo_at_gmail_dot_com/jprayertime/location/Location.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="41" column="0" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
+          <caret line="46" column="0" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -678,8 +672,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/msembodo_at_gmail_dot_com/jprayertime/response/HttpResponse.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="39" column="0" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.7973713">
+          <caret line="52" column="0" selection-start-line="52" selection-start-column="0" selection-end-line="52" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

@@ -1,15 +1,12 @@
 package msembodo_at_gmail_dot_com.jprayertime;
 
-import org.json.JSONException;
-import java.io.IOException;
-
 /**
  * Main class to run the application.
  *
  * @author Martyono Sembodo (martyono.sembodo@gmail.com)
  */
 public class Main {
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) {
         String location;
 
         try {
@@ -31,8 +28,7 @@ public class Main {
             System.out.printf("%10s%s%02d%s%02d\n", "Isha", " - ", pt.ishaHrMin[0], ":", pt.ishaHrMin[1]);
             System.out.println();
         }
-        catch (JSONException | IOException | ArrayIndexOutOfBoundsException e) {
-            System.out.println("JPrayerTime: location not found or unknown.");
+        catch (ArrayIndexOutOfBoundsException e) {
             System.out.println("USAGE  : JPrayerTime <location>");
             System.out.println("EXAMPLE: JPrayerTime \"London, UK\"");
         }
