@@ -1,6 +1,6 @@
-package msembodo_at_gmail_dot_com.jprayertime.location;
+package net.msembodo.jprayertime.location;
 
-import msembodo_at_gmail_dot_com.jprayertime.response.HttpResponse;
+import net.msembodo.jprayertime.response.HttpResponse;
 import org.joda.time.DateTime;
 import org.joda.time.DateTimeZone;
 import org.joda.time.format.DateTimeFormat;

@@ -1,6 +1,6 @@
-package msembodo_at_gmail_dot_com.jprayertime;
+package net.msembodo.jprayertime;
 
-import msembodo_at_gmail_dot_com.jprayertime.location.LocalDateTime;
+import net.msembodo.jprayertime.location.LocalDateTime;
 
 /**
  * Calculate prayer times based on location input and also provide location properties

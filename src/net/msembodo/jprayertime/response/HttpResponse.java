@@ -1,4 +1,4 @@
-package msembodo_at_gmail_dot_com.jprayertime.response;
+package net.msembodo.jprayertime.response;
 
 import java.io.BufferedReader;
 import java.io.IOException;

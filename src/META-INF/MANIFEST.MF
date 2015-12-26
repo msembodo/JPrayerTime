@@ -1,3 +1,3 @@
 Manifest-Version: 1.0
-Main-Class: msembodo_at_gmail_dot_com.jprayertime.Main
+Main-Class: net.msembodo.jprayertime.Main
 

@@ -1,4 +1,4 @@
-package msembodo_at_gmail_dot_com.jprayertime;
+package net.msembodo.jprayertime;
 
 /**
  * Provide constants for hour & minute.

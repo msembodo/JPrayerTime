@@ -1,4 +1,4 @@
-package msembodo_at_gmail_dot_com.jprayertime;
+package net.msembodo.jprayertime;
 
 /**
  * Main class to run the application.

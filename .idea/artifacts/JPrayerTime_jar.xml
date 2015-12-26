@@ -3,8 +3,8 @@
     <output-path>$PROJECT_DIR$/out/artifacts/JPrayerTime_jar</output-path>
     <root id="archive" name="JPrayerTime.jar">
       <element id="module-output" name="JPrayerTime" />
-      <element id="extracted-dir" path="$USER_HOME$/javalib/joda-time-2.9.1.jar" path-in-jar="/" />
       <element id="extracted-dir" path="$USER_HOME$/javalib/json-20090211.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/javalib/joda-time-2.9.1.jar" path-in-jar="/" />
     </root>
   </artifact>
 </component>
