@@ -19,12 +19,12 @@ public class Location {
     public double latitude;
     public double longitude;
 
-    public Location(String address) {
+    public Location(String address) throws JSONException {
         this.location = address;
         this.getLatLong();
     }
 
-    private void getLatLong() {
+    private void getLatLong() throws JSONException {
         try {
             String urlGeocode = "http://maps.google.com/maps/api/geocode/json?sensor=false&address=";
             urlGeocode += URLEncoder.encode(location, "UTF-8");
@@ -39,10 +39,7 @@ public class Location {
             latitude = latlong.getDouble("lat");
             longitude = latlong.getDouble("lng");
         }
-        catch (JSONException e) {
-            System.out.println("JPrayerTime: unknown location.");
-            System.exit(1);
-        }
+
         catch (UnsupportedEncodingException e) {
             e.printStackTrace();
         }

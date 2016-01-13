@@ -1,5 +1,7 @@
 package net.msembodo.jprayertime;
 
+import org.json.JSONException;
+
 /**
  * Main class to run the application.
  *
@@ -32,6 +34,10 @@ public class Main implements HourMinute {
         catch (ArrayIndexOutOfBoundsException e) {
             System.out.println("USAGE  : JPrayerTime <location>");
             System.out.println("EXAMPLE: JPrayerTime \"London, UK\"");
+        }
+        catch (JSONException e) {
+            System.err.println("Location not found or does not exist.");
+            System.exit(1);
         }
     }
 }

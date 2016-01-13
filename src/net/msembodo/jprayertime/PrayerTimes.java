@@ -1,6 +1,7 @@
 package net.msembodo.jprayertime;
 
 import net.msembodo.jprayertime.location.LocalDateTime;
+import org.json.JSONException;
 
 /**
  * Calculate prayer times based on location input and also provide location properties
@@ -20,7 +21,7 @@ public class PrayerTimes implements HourMinute {
     public int[] maghribTime = new int[2];
     public int[] ishaTime = new int[2];
 
-    public PrayerTimes(String address) {
+    public PrayerTimes(String address) throws JSONException {
         double fajrTwilight = -19.5;
         double ishaTwilight = -17.5;
 

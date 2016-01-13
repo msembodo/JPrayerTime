@@ -26,12 +26,12 @@ public class LocalDateTime {
     public int localOffset;
     public String formattedDateTime;
 
-    public LocalDateTime(String address) {
+    public LocalDateTime(String address) throws JSONException {
         this.location = address;
         this.getLocalDateTime();
     }
 
-    private void getLocalDateTime() {
+    private void getLocalDateTime() throws JSONException {
         DateTime localDateTime;
         double rawOffset;
         double dstOffset;
